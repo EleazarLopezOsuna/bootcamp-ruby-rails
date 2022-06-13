@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_13_131858) do
+ActiveRecord::Schema.define(version: 2022_06_13_140953) do
 
   create_table "products", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_06_13_131858) do
   create_table "shopping_carts", charset: "utf8mb4", force: :cascade do |t|
     t.decimal "total", precision: 10, scale: 2
     t.bigint "user_id", null: false
+    t.boolean "active", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_shopping_carts_on_user_id"
